@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1526096809 source:d:\progrmas hechos por mi\rsa\myrsatrue\generar.cpp
+	"generar.h"
+
+1526096717 d:\progrmas hechos por mi\rsa\myrsatrue\generar.h
+	<stdlib.h>
+	<ctime>
+	<string>
+	<math.h>
+	<vector>
+	"operaciones.h"
+
+1526096798 d:\progrmas hechos por mi\rsa\myrsatrue\operaciones.h
+	<stdlib.h>
+	<ctime>
+	<string>
+	<math.h>
+	<vector>
+
+1526101095 source:d:\progrmas hechos por mi\rsa\myrsatrue\main.cpp
+	<iostream>
+	"rsa.h"
+	"operaciones.h"
+
+1526096798 source:d:\progrmas hechos por mi\rsa\myrsatrue\operaciones.cpp
+	"operaciones.h"
+
+1526101152 source:d:\progrmas hechos por mi\rsa\myrsatrue\rsa.cpp
+	"rsa.h"
+	"operaciones.h"
+	"generar.h"
+
+1526100918 d:\progrmas hechos por mi\rsa\myrsatrue\rsa.h
+	<iostream>
+	<string>
+	<math.h>
+	<ctime>
+
