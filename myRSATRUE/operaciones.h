@@ -7,10 +7,11 @@
 #include <vector>
 using namespace std;
 long long euclides(long long,long long);
-pair<long long,long long> euclidesext(long long,long long);
+long long euclidesext(long long,long long);
 long long modulo(long long, long long);
-long long inversa(long long, long long);
+//long long inversa(long long, long long);
 long long expomod(long long,long long,long long);
 long long euler(long long,long long);
-bool Primalidad(long long,int);
+bool fermat1(long long,int);
 #endif // OPERACIONES_H_INCLUDED
+
