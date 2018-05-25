@@ -1,48 +1,41 @@
 #include "rsa.h"
-#include "operaciones.h"
 #include "generar.h"
 rsa::rsa(){
-    srand(time(0));
-	flag = true;
+    //srand(time(0));
 	p = generarprimo();
 	q = generarprimo();
 	n=p*q;
 	phieu=euler(p,q);
-	long long e=generare(phieu);
-	long long d=inversa(e,phieu);
+	e=generare(phieu);
+	long long d=euclidesext(e,phieu);
+	keypri=modulo(d,phieu);
 	keypub=e;
-	keypri=d;
 }
-rsa::rsa(long long p, long long q,long long e,long long d){
-    n=p*q;
-	phieu=euler(p,q);
-	keypub=e;
-	keypri=d;
+rsa::rsa(long long n1, long long e1){
+    n=n1;
+    e=e1;
 }
 
-long long rsa::cifrado(string mensaje){
+void rsa::cifrado(string mensaje){
     long long aux;
 	for (int i = 0; i < mensaje.size(); i++) {
 		for (int j = 0; j < alphabet.size(); j++) {
 			if (mensaje[i] == alphabet[j]) {
-				long long aux=expomod(j,keypub,phieu);
-				cout << endl<<aux << endl;
+				long long aux=expomod(j,e,n);
+				cout <<aux << " ";
 			}
 		}
 
 	}
-	return aux;
 }
 
-string rsa::descifrado(long long a){
-    string aux;
-    long long c=expomod(a,keypri,phieu);
-    aux=alphabet[c];
-	cout <<endl<< aux << endl;
-	return aux;
+void rsa::descifrado(vector<int> a){
+    for(int i=0;i<a.size();i++){
+        cout<<alphabet[expomod(a[i],keypri,n)];
+    }
 }
-long long rsa::getp()const{
-    return p;
+long long rsa::getn()const{
+    return n;
 }
 
 long long rsa::getq()const{
